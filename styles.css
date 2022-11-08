@@ -1,0 +1,152 @@
+.container{
+  border-radius: 40px;
+  height: 800px;
+  margin: 50px;
+  box-shadow: 15px 10px 5px #265a7d;
+  border-color: #0dcaf0 ;
+  border-style: dashed;
+
+}
+
+#MainICON {
+  width: 500px;
+  height: 400px;
+  right: 50px;
+  position: relative;
+}
+
+.STATS * {
+  margin-bottom: 40px;
+  white-space: nowrap
+}
+
+.STATS  h3{
+  font-size: 30px;
+}
+
+.STATS h1{
+  font-size: 45px;
+}
+
+.RIGHTSIDE {
+  float: right;
+  position: relative;
+}
+
+.card {
+  transition: background-color 1s;
+}
+
+.card img{
+  float:left;
+}
+
+.card-body {
+  padding-left: 0px;
+}
+
+.card:hover {
+  background-color: #74d5e8;
+}
+
+.location_entry label{
+  font-size: 20px;
+}
+
+.CORF {
+  border-radius: 50px;
+  margin: 0px 0px 20px 20px;
+  position: relative;
+  bottom:24px;
+  background-color: #74d5e8;
+  font-size: 24px;
+  padding: 20px 30px;
+  transition: background-color 1s;
+}
+
+.CORF:hover {
+  background-color: white;
+}
+
+.CORF:active {
+  background-color: #0dcaf0;
+  transition: 0s;
+}
+
+.REFRESH {
+  padding: 20px;
+  border-radius: 40px;
+  position: relative;
+  bottom: 20px;
+  right: 30px;
+  background-color: #0dcaf0;
+  transition: background-color 1s;
+}
+
+.REFRESH:hover {
+  background-color: Red;
+}
+
+.FUTURE {
+  position: relative;
+  right:30px;
+  width: 300px;
+
+}
+
+.card {
+  padding-right: 30px;
+  text-align: right;
+}
+
+.card-text {
+  font-size: 13px;
+}
+
+.STATS *:hover{
+  transform: scale(1.04)
+}
+
+.BOTTOMSEC {
+  position: relative;
+  bottom: 80px;
+}
+
+#LOC {
+  font-size:29px;
+}
+
+.STATS h2{
+  text-align: center;
+}
+
+.forecastBtn {
+  background: transparent;
+  border: none;
+  outline: none;
+  
+}
+
+.forecastBtn:hover{
+  cursor: pointer;  
+}
+
+.WeatherPopup {
+  background-color:#6ad5ff;
+  border-radius: 20px;
+  transform: scale(.2);
+  transition: transform 1s, right .2s;
+  position: absolute;
+  visibility: hidden;
+  outline: solid #60bce1;
+  right: 0;
+}
+
+.openWeatherPopup {
+  right: 33.5%;
+  padding: 30px 30px 30px 30px;
+  visibility: visible;
+  transform: scale(1);
+  height: 600px;
+  top: auto;
+}
