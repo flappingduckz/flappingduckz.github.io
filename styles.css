@@ -52,7 +52,7 @@ body {
 }
 
 .card:hover {
-  background-color: #74d5e8;
+  background-color: #0dcaf042;
 }
 
 .location_entry label{
@@ -138,13 +138,13 @@ body {
 }
 
 .WeatherPopup {
-  background-color:#6ad5ff;
+  background-color:#026275;
   border-radius: 20px;
   transform: scale(.2);
   transition: transform 1s, right .2s;
   position: absolute;
   visibility: hidden;
-  outline: solid #60bce1;
+  outline: solid #002e40;
   right: 0;
 }
 
