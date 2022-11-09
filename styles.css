@@ -138,17 +138,20 @@ body {
 }
 
 .WeatherPopup {
-  background-color:#026275;
+  background-color:rgba(241, 241, 241, 0.551);
   border-radius: 20px;
   transform: scale(.2);
-  transition: transform 1s, right .1s;
+  transition: transform .4s, right .4s, background-color .7s;
   position: absolute;
   visibility: hidden;
   outline: solid #002e40;
   right: 0;
+  width: 950px
+ 
 } 
 
 .openWeatherPopup {
+  background-color: #18dd0e;
   right: 33.5%;
   padding: 30px 30px 30px 30px;
   visibility: visible;
