@@ -23,25 +23,18 @@ function setCurrentLocationData(position) {
     console.log(ApiLatLonRequestURL)
     $.getJSON(ApiLatLonRequestURL, function (data) {
         LocationData = data
+        console.log(data)
         let fourdays = ['9', '19', '29', '39']
         for (i in fourdays) {
             DAY = fourdays[i]
             document.getElementById(`Day${DAY}Weather`).innerHTML = String(LocationData.list[DAY].weather[0].main);
-            if (LocationData.list[DAY].weather[0].main == 'Clear') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clear.png";
-            } else if (LocationData.list[DAY].weather[0].main == 'Rain') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Rain.png";
-            } else if (LocationData.list[DAY].weather[0].main == 'Clouds') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clouds.png";
-            } else {
-                console.log('we couldnt find anything captain')
-            }
+            document.getElementById(`Day${DAY}WeatherIMG`).src = `IMG/${LocationData.list[DAY].weather[0].main}.png`
         }
 
         //GOES THROUGH MAIN STATS
         console.log(LocationData.list[DAY].weather[0].main)
         document.getElementById("MainICON").setAttribute("src", `IMG/${LocationData.list[0].weather[0].main}.png`)
-        document.getElementById("LOC").innerHTML = `${position.coords.latitude}, ${position.coords.longitude} (you)`
+        document.getElementById("LOC").innerHTML = LocationData.city.name
         document.getElementById("TEMPATURED").innerHTML = ' ' + String(parseInt(LocationData.list[0].main.temp)) + '°F'
         document.getElementById("CURRENTWEATHER").innerHTML = String(LocationData.list[0].weather[0].description).replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         document.getElementById("HUMIDITY").innerHTML = String(parseInt(LocationData.list[0].main.humidity))
@@ -109,7 +102,6 @@ function newloc() {
     ClientInputLoc = document.getElementById("input_loc").value.toLowerCase()
     APIKEY = '8c15cb19dbc355d25ae5c4e0e088ede4'
     ApiLatLonRequestURL = `https://api.openweathermap.org/data/2.5/forecast?q=${ClientInputLoc}&appid=${APIKEY}&units=imperial`
-    //ApiLatLonRequestURL = `https://api.openweathermap.org/data/2.5/weather?q=${ClientInputLoc}&appid=${APIKEY}&units=imperial`
     $.getJSON(ApiLatLonRequestURL, function (data) {
         LocationData = data
         console.log(LocationData)
@@ -117,23 +109,14 @@ function newloc() {
         for (i in fourdays) {
             DAY = fourdays[i]
             document.getElementById(`Day${DAY}Weather`).innerHTML = String(LocationData.list[DAY].weather[0].main);
-            if (LocationData.list[DAY].weather[0].main == 'Clear') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clear.png";
-            } else if (LocationData.list[DAY].weather[0].main == 'Rain') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Rain.png";
-            } else if (LocationData.list[DAY].weather[0].main == 'Clouds') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clouds.png";
-            } else {
-                console.log('we couldnt find anything captain')
-            }
+            document.getElementById(`Day${DAY}WeatherIMG`).src = `IMG/${LocationData.list[DAY].weather[0].main}.png`
         }
-
         //UPDATES STATS
         console.log(LocationData.list[0].weather[0].main)
         document.getElementById("MainICON").setAttribute("src", `IMG/${LocationData.list[0].weather[0].main}.png`)
         document.getElementById("LOC").innerHTML = ClientInputLoc.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         if (document.getElementById("TEMPBUTTON").innerHTML == 'F') { document.getElementById("TEMPATURED").innerHTML = ' ' + String(parseInt(LocationData.list[0].main.temp)) + '°F' }
-             else { document.getElementById("TEMPATURED").innerHTML = ' ' + math.round((Number(parseInt(LocationData.list[0].main.temp)) - 32) * .5556) + '°C' }
+            else { document.getElementById("TEMPATURED").innerHTML = ' ' + math.round((Number(parseInt(LocationData.list[0].main.temp)) - 32) * .5556) + '°C' }
         document.getElementById("CURRENTWEATHER").innerHTML = String(LocationData.list[0].weather[0].description).replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         document.getElementById("HUMIDITY").innerHTML = String(parseInt(LocationData.list[0].main.humidity))
         document.getElementById("WINDINESS").innerHTML = String(parseInt(LocationData.list[0].wind.speed))
@@ -158,7 +141,6 @@ function openPopUpForecast(e) {
         document.getElementById(`ForeCastCard${g}`).style.backgroundColor = ``;
         document.getElementById(`forecastBtn${g}`).setAttribute("onClick", "openPopUpForecast(this)")
     }
-    console.log('I WAS RAN 2')
     popup = document.getElementById(`Popup${e.value}`)
     popup.classList.add("openWeatherPopup")
     document.getElementById(`forecastBtn${e.value}`).setAttribute("onClick", "closePopUpForecast(this)")
