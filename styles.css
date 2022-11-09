@@ -1,11 +1,17 @@
+body {
+  background-image: url(IMG/BACKGROUND.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .container{
   border-radius: 40px;
   height: 800px;
   margin: 50px;
   box-shadow: 15px 10px 5px #265a7d;
-  border-color: #0dcaf0 ;
+  border-color: #0dcaf034 ;
   border-style: dashed;
-
+  background-color: rgba(241, 241, 241, 0.551)
 }
 
 #MainICON {
@@ -58,7 +64,7 @@
   margin: 0px 0px 20px 20px;
   position: relative;
   bottom:24px;
-  background-color: #74d5e8;
+  background-color: #e87474;
   font-size: 24px;
   padding: 20px 30px;
   transition: background-color 1s;
