@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<<<<<<< Updated upstream
   <head>
     <meta charset="utf-8">
     <title>WEATHER APP</title>
@@ -58,6 +59,70 @@
           <div class="row FUTURE">
             <div class="card" id="ForeCastCard1" style="width : 17rem;height : 9rem;">
               <button id="forecastBtn1" class="forecastBtn" onclick="openPopUpForecast(this)" value=1>
+=======
+
+<head>
+  <meta charset="utf-8">
+  <title>WEATHER APP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="additional.css">
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
+  <script type="text/javascript">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#MainICON").hover(
+        function () {
+          $(this).attr("src", "IMG/11_rain.gif");
+        },
+        function () {
+          setTimeout($(this).attr("src", "IMG/11_rain.png"), 511000)
+
+        }
+      );
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 m-4 STATS">
+
+        <h2><u id="LOC">Current Location : No where</u></h2>
+        <h1 class="TEMP"><b id="currentTimes"> 0:00PM Tuesday</b><br>Temperature:<b id="TEMPATURED"></b></h1>
+        <h3>Weather : <b id="CURRENTWEATHER">N/A</b></h3>
+        <h3 class="HUM">Humidity : <b id="HUMIDITY">0</b>%</h3>
+        <h3 class="WIND">Wind : <b id="WINDINESS">0</b> MPH</h3>
+        <h3 class="CHANCE">Chance of Prec: <b id="ChanceOfRain">0</b>%</h3>
+      </div>
+      <div class="col-5">
+        <img class="mt-5" src="IMG/11_rain.png" alt="" id="MainICON">
+      </div>
+      <div class="WeatherPopup" id="Popup1" style="width: 950px">
+        <h1>im tmrws forcast</h1>
+      </div>
+      <div class="WeatherPopup" id="Popup2" style="width: 950px">
+        <h1>im tmrws 2 forcast</h1>
+      </div>
+      <div class="WeatherPopup" id="Popup3" style="width: 950px">
+        <h1>im tmrws3 forcast</h1>
+      </div>
+      <div class="WeatherPopup" id="Popup4" style="width: 950px">
+        <h1>im tmrws 4 forcast</h1>
+      </div>
+      <div class="WeatherPopup" id="Popup5" style="width: 950px">
+        <h1>im tmrws 5 forcast</h1>
+      </div>
+      <div class="col-2 m-4 FUTURE">
+        <h3 class="float-end"></h3>
+        <div class="row FUTURE">
+          <div class="card" id="ForeCastCard1" style="width : 17rem;height : 9rem;" >
+            <button id="forecastBtn1" class="forecastBtn" onclick="openPopUpForecast(this)" value=1>
+>>>>>>> Stashed changes
               <div class="card-body col">
                 <img id="Day9WeatherIMG" src="IMG/rainy.png" alt="" height="100px" width="100px">
                 <h5 class="card-title">Tomorrow</h5>
@@ -65,9 +130,15 @@
                 <p class="card-text">Morning : Cloudy<br> Afternoon : Rainy <br>Evening : Rainy</p>
               </div>
             </button>
+<<<<<<< Updated upstream
             </div>
             <div class="card mt-2" id="ForeCastCard2" style="width : 17rem;height : 9rem;">
               <button id="forecastBtn2" class="forecastBtn" onclick="openPopUpForecast(this)" value=2>
+=======
+          </div>
+          <div class="card mt-2" id="ForeCastCard2" style="width : 17rem;height : 9rem;">
+            <button id="forecastBtn2" class="forecastBtn" onclick="openPopUpForecast(this)" value=2>
+>>>>>>> Stashed changes
               <div class="card-body col">
                 <img id="Day19WeatherIMG" src="IMG/cloud.png" alt="" height="100px" width="100px">
                 <h5 class="card-title" id="DayOfWeek9">Unavailable</h5>
@@ -75,9 +146,15 @@
                 <p class="card-text">Morning : N/A<br> Afternoon : N/A <br>Evening : N/A</p>
               </div>
             </button>
+<<<<<<< Updated upstream
             </div>
             <div class="card mt-2" id="ForeCastCard3" style="width : 17rem;height : 9rem;">
               <button id="forecastBtn3" class="forecastBtn" onclick="openPopUpForecast(this)" value=3>
+=======
+          </div>
+          <div class="card mt-2" id="ForeCastCard3" style="width : 17rem;height : 9rem;">
+            <button id="forecastBtn3" class="forecastBtn" onclick="openPopUpForecast(this)" value=3>
+>>>>>>> Stashed changes
               <div class="card-body col">
                 <img id="Day29WeatherIMG" src="IMG/sunny.png" alt="" height="100px" width="100px">
                 <h5 class="card-title" id="DayOfWeek19">Unavailable</h5>
@@ -85,9 +162,15 @@
                 <p class="card-text">Morning : N/A <br>Afternoon : N/A <br>Evening : N/A</p>
               </div>
             </button>
+<<<<<<< Updated upstream
             </div>
             <div class="card mt-2" id="ForeCastCard4" style="width : 17rem;height : 9rem;">
               <button id="forecastBtn4" class="forecastBtn" onclick="openPopUpForecast(this)" value=4>
+=======
+          </div>
+          <div class="card mt-2" id="ForeCastCard4" style="width : 17rem;height : 9rem;">
+            <button id="forecastBtn4" class="forecastBtn" onclick="openPopUpForecast(this)" value=4>
+>>>>>>> Stashed changes
               <div class="card-body col">
                 <img id="Day39WeatherIMG" src="IMG/sunny.png" alt="" height="100px" width="100px">
                 <h5 class="card-title" id="DayOfWeek29">Unavailable</h5>
@@ -95,9 +178,15 @@
                 <p class="card-text">Morning : N/A<br> Afternoon : N/A <br>Evening : N/A</p>
               </div>
             </button>
+<<<<<<< Updated upstream
             </div>
             <div class="card mt-2" id="ForeCastCard5" style="width : 17rem;height : 9rem; ">
               <button id="forecastBtn5" class="forecastBtn" onclick="openPopUpForecast(this)" value=5>
+=======
+          </div>
+          <div class="card mt-2" id="ForeCastCard5" style="width : 17rem;height : 9rem;">
+            <button id="forecastBtn5" class="forecastBtn" onclick="openPopUpForecast(this)" value=5>
+>>>>>>> Stashed changes
               <div class="card-body col">
                 <img src="IMG/rainy.png" alt="" height="100px" width="100px">
                 <h5 class="card-title" id="DayOfWeek39">Unavailable</h5>

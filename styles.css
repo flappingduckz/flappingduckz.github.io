@@ -2,8 +2,13 @@
   border-radius: 40px;
   height: 800px;
   margin: 50px;
+<<<<<<< Updated upstream
   box-shadow: 15px 10px 5px #265a7d;
   border-color: #0dcaf0 ;
+=======
+  box-shadow: 15px 10px 5px #00000075;
+  border-color: #0dcaf034 ;
+>>>>>>> Stashed changes
   border-style: dashed;
 
 }
@@ -58,18 +63,22 @@
   margin: 0px 0px 20px 20px;
   position: relative;
   bottom:24px;
+<<<<<<< Updated upstream
   background-color: #74d5e8;
+=======
+  background-color: #0dcaf042;
+>>>>>>> Stashed changes
   font-size: 24px;
   padding: 20px 30px;
   transition: background-color 1s;
 }
 
 .CORF:hover {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.524);
 }
 
 .CORF:active {
-  background-color: #0dcaf0;
+  background-color: #0dcaf074;
   transition: 0s;
 }
 
@@ -79,12 +88,12 @@
   position: relative;
   bottom: 20px;
   right: 30px;
-  background-color: #0dcaf0;
+  background-color: #0dcaf042;
   transition: background-color 1s;
 }
 
 .REFRESH:hover {
-  background-color: Red;
+  background-color: rgba(255, 0, 0, 0.416);
 }
 
 .FUTURE {
