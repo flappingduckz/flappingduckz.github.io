@@ -16,7 +16,6 @@ body {
 
 #MainICON {
   width: 500px;
-  height: 400px;
   right: 50px;
   position: relative;
 }
@@ -68,6 +67,8 @@ body {
   font-size: 24px;
   padding: 20px 30px;
   transition: background-color 1s;
+  width: 80px;
+  height: 80px;
 }
 
 .CORF:hover {
@@ -130,7 +131,6 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  
 }
 
 .forecastBtn:hover{
@@ -141,12 +141,12 @@ body {
   background-color:#026275;
   border-radius: 20px;
   transform: scale(.2);
-  transition: transform 1s, right .2s;
+  transition: transform 1s, right .1s;
   position: absolute;
   visibility: hidden;
   outline: solid #002e40;
   right: 0;
-}
+} 
 
 .openWeatherPopup {
   right: 33.5%;

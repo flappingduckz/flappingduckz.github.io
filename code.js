@@ -28,22 +28,25 @@ function setCurrentLocationData(position) {
             DAY = fourdays[i]
             document.getElementById(`Day${DAY}Weather`).innerHTML = String(LocationData.list[DAY].weather[0].main);
             if (LocationData.list[DAY].weather[0].main == 'Clear') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/sunny.png";
+                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clear.png";
             } else if (LocationData.list[DAY].weather[0].main == 'Rain') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/rainy.png";
+                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Rain.png";
             } else if (LocationData.list[DAY].weather[0].main == 'Clouds') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/cloud.png";
+                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clouds.png";
             } else {
                 console.log('we couldnt find anything captain')
             }
         }
+
         //GOES THROUGH MAIN STATS
+        console.log(LocationData.list[DAY].weather[0].main)
+        document.getElementById("MainICON").setAttribute("src", `IMG/${LocationData.list[0].weather[0].main}.png`)
         document.getElementById("LOC").innerHTML = `${position.coords.latitude}, ${position.coords.longitude} (you)`
         document.getElementById("TEMPATURED").innerHTML = ' ' + String(parseInt(LocationData.list[0].main.temp)) + '°F'
         document.getElementById("CURRENTWEATHER").innerHTML = String(LocationData.list[0].weather[0].description).replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         document.getElementById("HUMIDITY").innerHTML = String(parseInt(LocationData.list[0].main.humidity))
         document.getElementById("WINDINESS").innerHTML = String(parseInt(LocationData.list[0].wind.speed))
-        document.getElementById("ChanceOfRain").innerHTML = (String(LocationData.list[0].pop * 100)).substr(0, 2)
+        document.getElementById("ChanceOfRain").innerHTML = (String(LocationData.list[0].pop * 100)).substr(0, 3)
 
         TimeAPIKey = 'RS44HE9ZFROS'
         TimeApiURL = `http://api.timezonedb.com/v2.1/get-time-zone?by=position&lat=${LocationData.city.coord.lat}&lng=${LocationData.city.coord.lon}&key=${TimeAPIKey}&format=json`
@@ -115,24 +118,26 @@ function newloc() {
             DAY = fourdays[i]
             document.getElementById(`Day${DAY}Weather`).innerHTML = String(LocationData.list[DAY].weather[0].main);
             if (LocationData.list[DAY].weather[0].main == 'Clear') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/sunny.png";
+                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clear.png";
             } else if (LocationData.list[DAY].weather[0].main == 'Rain') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/rainy.png";
+                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Rain.png";
             } else if (LocationData.list[DAY].weather[0].main == 'Clouds') {
-                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/cloud.png";
+                document.getElementById(`Day${DAY}WeatherIMG`).src = "IMG/Clouds.png";
             } else {
                 console.log('we couldnt find anything captain')
             }
         }
 
         //UPDATES STATS
+        console.log(LocationData.list[0].weather[0].main)
+        document.getElementById("MainICON").setAttribute("src", `IMG/${LocationData.list[0].weather[0].main}.png`)
         document.getElementById("LOC").innerHTML = ClientInputLoc.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         if (document.getElementById("TEMPBUTTON").innerHTML == 'F') { document.getElementById("TEMPATURED").innerHTML = ' ' + String(parseInt(LocationData.list[0].main.temp)) + '°F' }
              else { document.getElementById("TEMPATURED").innerHTML = ' ' + math.round((Number(parseInt(LocationData.list[0].main.temp)) - 32) * .5556) + '°C' }
         document.getElementById("CURRENTWEATHER").innerHTML = String(LocationData.list[0].weather[0].description).replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         document.getElementById("HUMIDITY").innerHTML = String(parseInt(LocationData.list[0].main.humidity))
         document.getElementById("WINDINESS").innerHTML = String(parseInt(LocationData.list[0].wind.speed))
-        document.getElementById("ChanceOfRain").innerHTML = (String(LocationData.list[0].pop * 100)).substr(0, 2)
+        document.getElementById("ChanceOfRain").innerHTML = (String(LocationData.list[0].pop * 100)).substr(0, 3)
 
         TimeAPIKey = 'RS44HE9ZFROS'
         TimeApiURL = `http://api.timezonedb.com/v2.1/get-time-zone?by=position&lat=${LocationData.city.coord.lat}&lng=${LocationData.city.coord.lon}&key=${TimeAPIKey}&format=json`
